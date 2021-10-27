@@ -2,12 +2,13 @@ using System;
 namespace Library
 {
 
-    public class VisitanteConcreto1: IVisitor
+    public class VisitanteConcreto1: Visitor
     {
 
         public int edadTotal;
-        public void Visitar(Node node)
+        public override void Visitar(Node node)
         {
+            edadTotal = 0;
             
             //Calculo de edades
             foreach (Node hijo in node.Children)

@@ -4,7 +4,7 @@ namespace Library
 
     public interface IAcceptVisitor
     {
-        void Aceptar(IVisitor visitor);
+        void Aceptar(Visitor visitor);
     }
     
 

@@ -47,7 +47,7 @@ namespace Library
 
         //implementando IAccpetVisitor
 
-        public void Aceptar(IVisitor visitor)
+        public void Aceptar(Visitor visitor)
         {
             visitor.Visitar(this);
         }

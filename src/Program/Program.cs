@@ -8,12 +8,12 @@ namespace Program
         static void Main(string[] args)
         {
             Person persona1 = new Person("Adolfito1", 31);
-            Person persona2 = new Person("Adolfito2", 25);
-            Person persona3 = new Person("Adolfito3", 2);
-            Person persona4 = new Person("Adolfito4", 20);
-            Person persona5 = new Person("Adolfito5", 20);
-            Person persona6 = new Person("Adolfito6", 20);
-            Person persona7 = new Person("Adolfito7", 10);
+            Person persona2 = new Person("AdolfitoJulio", 25);
+            Person persona3 = new Person("AdolfitoErnestoSegundo", 2);
+            Person persona4 = new Person("AdolfitoA", 21);
+            Person persona5 = new Person("AdolfitoJulioRios", 20);
+            Person persona6 = new Person("AdolfitoChan", 24);
+            Person persona7 = new Person("AdolfitoJr", 10);
             Person persona8 = new Person("Adolfito8", 5);
 
 
@@ -34,9 +34,25 @@ namespace Program
             n3.AddChildren(n6);
             n3.AddChildren(n7);
 
-            // visitar el árbol aquí
-            IVisitor visitante = new VisitanteConcreto1();
+            // visitar el árbol aquí parte 3
+            Visitor visitante = new VisitanteConcreto1();
+            
             n1.Aceptar(visitante);
+            n2.Aceptar(visitante);
+            n3.Aceptar(visitante);
+
+            //parte 4
+            Visitor visitanteA = new VisitanteConcreto2();
+            n1.Aceptar(visitanteA);
+            n2.Aceptar(visitanteA);
+            n3.Aceptar(visitanteA);
+
+            Visitor visitanteB = new VisitanteConcreto3();
+            n1.Aceptar(visitanteB);
+            n2.Aceptar(visitanteB);
+            n3.Aceptar(visitanteB);
+
+
             
         }
     }
