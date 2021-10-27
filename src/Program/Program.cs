@@ -7,14 +7,14 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Person persona1 = new Person("Adolfito1", "20");
-            Person persona2 = new Person("Adolfito2", "20");
-            Person persona3 = new Person("Adolfito3", "20");
-            Person persona4 = new Person("Adolfito4", "20");
-            Person persona5 = new Person("Adolfito5", "20");
-            Person persona6 = new Person("Adolfito6", "20");
-            Person persona7 = new Person("Adolfito7", "20");
-            Person persona8 = new Person("Adolfito8", "20");
+            Person persona1 = new Person("Adolfito1", 31);
+            Person persona2 = new Person("Adolfito2", 25);
+            Person persona3 = new Person("Adolfito3", 2);
+            Person persona4 = new Person("Adolfito4", 20);
+            Person persona5 = new Person("Adolfito5", 20);
+            Person persona6 = new Person("Adolfito6", 20);
+            Person persona7 = new Person("Adolfito7", 10);
+            Person persona8 = new Person("Adolfito8", 5);
 
 
             Node n1 = new Node(1, persona1);
@@ -35,6 +35,9 @@ namespace Program
             n3.AddChildren(n7);
 
             // visitar el árbol aquí
+            IVisitor visitante = new VisitanteConcreto1();
+            n1.Aceptar(visitante);
+            
         }
     }
 }

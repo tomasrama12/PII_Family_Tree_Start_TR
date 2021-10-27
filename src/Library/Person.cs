@@ -4,7 +4,7 @@ namespace Library
 
     public class Person
     {
-        public Person(string name, string edad)
+        public Person(string name, int edad)
         {
             this.Name = name;
             this.Edad = edad;
@@ -14,10 +14,10 @@ namespace Library
 
         private string name;
 
-        private string edad;
+        private int edad;
 
         public string Name{get;set;}
-        public string Edad{get;set;}
+        public int Edad{get;set;}
     }
 
 }

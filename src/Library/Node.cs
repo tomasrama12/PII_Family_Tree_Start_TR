@@ -4,7 +4,7 @@ using System;
 
 namespace Library
 {
-    public class Node
+    public class Node: IAcceptVisitor
     {
         private int number;
 
@@ -43,6 +43,13 @@ namespace Library
         public void AddChildren(Node n)
         {
             this.children.Add(n);
+        }
+
+        //implementando IAccpetVisitor
+
+        public void Aceptar(IVisitor visitor)
+        {
+            visitor.Visitar(this);
         }
 
         
