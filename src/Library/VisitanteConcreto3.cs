@@ -8,14 +8,23 @@ namespace Library
         public string nombreMasLargo;
         public override void Visitar(Node node)
         {
-            nombreMasLargo = "";
+            nombreMasLargo = node.Persona.Name;
             
-            //Compara edades
+            //Compara nombres segun su largo, si el nombre 
             foreach (Node hijo in node.Children)
             {
                 if (nombreMasLargo.Length < hijo.Persona.Name.Length)
                 {
                     nombreMasLargo = hijo.Persona.Name;
+                }
+                foreach (Node nieto in hijo.Children)
+                {
+                    
+                    if (nombreMasLargo.Length < nieto.Persona.Name.Length)
+                    {
+                    nombreMasLargo = nieto.Persona.Name;
+                    }
+
                 }
                 
             }

@@ -15,15 +15,19 @@ namespace Library
             //Compara edades
             foreach (Node hijo in node.Children)
             {
-                if (mayor < hijo.Persona.Edad)
+                
+                foreach (Node nieto in hijo.Children)
                 {
-                    mayor = hijo.Persona.Edad;
-                    number = hijo.Number;
+                    if (mayor < nieto.Persona.Edad)
+                    {
+                    mayor = nieto.Persona.Edad;
+                    number = nieto.Number;
+                    }
                 }
                 
             }
             
-            Console.WriteLine($"El hijo con mayor edad es el numro {number} con edad {mayor}");
+            Console.WriteLine($"El nieto(nodos hojas) con mayor edad es el numro {number} con edad {mayor}");
         }
     }
 
